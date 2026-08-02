@@ -1,69 +1,58 @@
-const express=require("express");
+const express = require('express');
+const router = express.Router();
+const nodemailer = require('nodemailer');
 
-const router=express.Router();
+router.post('/', async (req, res) => {
+    const { name, company, email, phone, country, product, message } = req.body;
 
-const nodemailer=require("nodemailer");
+    // Create Nodemailer Transporter
+    const transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: process.env.EMAIL_USER, // Your Gmail address
+            pass: process.env.EMAIL_PASS  // Your Gmail App Password (16 characters)
+        },
+        connectionTimeout: 10000, // 10 seconds timeout
+        greetingTimeout: 5000,
+        socketTimeout: 10000
+    });
 
-require("dotenv").config();
+    const mailOptions = {
+        from: `"${name}" <${process.env.EMAIL_USER}>`,
+        replyTo: email,
+        to: process.env.EMAIL_USER, // Receives the inquiry
+        subject: `New Inquiry from ${name} (${product})`,
+        html: `
+            <h3>New Contact Form Submission</h3>
+            <p><strong>Name:</strong> ${name}</p>
+            <p><strong>Company:</strong> ${company || 'N/A'}</p>
+            <p><strong>Email:</strong> ${email}</p>
+            <p><strong>Phone:</strong> ${phone}</p>
+            <p><strong>Country:</strong> ${country}</p>
+            <p><strong>Product Interest:</strong> ${product}</p>
+            <p><strong>Message:</strong></p>
+            <p>${message}</p>
+        `
+    };
 
-router.post("/enquiry",(req,res)=>{
-
-const{name,email,phone,country,product,message}=req.body;
-
-const transporter=nodemailer.createTransport({
-
-service:"gmail",
-
-auth:{
-
-user:process.env.EMAIL,
-
-pass:process.env.PASSWORD
-
-}
-
+    try {
+        await transporter.sendMail(mailOptions);
+        // Send alert and redirect back to contact page
+        res.send(`
+            <script>
+                alert('Thank you! Your inquiry has been sent successfully.');
+                window.location.href = '/contact.html';
+            </script>
+        `);
+    } catch (error) {
+        console.error('Nodemailer Error:', error);
+        res.status(500).send(`
+            <script>
+                alert('Failed to send inquiry. Please try again or email us directly.');
+                window.location.href = '/contact.html';
+            </script>
+        `);
+    }
 });
 
-const mailOptions={
-
-from:process.env.EMAIL,
-
-to:process.env.EMAIL,
-
-subject:"New Enquiry From SG Companies",
-
-html:`
-
-<h2>New Enquiry</h2>
-
-<p><b>Name :</b> ${name}</p>
-
-<p><b>Email :</b> ${email}</p>
-
-<p><b>Phone :</b> ${phone}</p>
-
-<p><b>Country :</b> ${country}</p>
-
-<p><b>Product :</b> ${product}</p>
-
-<p><b>Message :</b> ${message}</p>
-
-`
-
-};
-
-transporter.sendMail(mailOptions,(err,info)=>{
-
-if(err){
-
-return res.send("Error");
-
-}
-
-res.send("Enquiry Submitted Successfully");
-
-});
-
-});
-
-module.exports=router;
+module.exports = router;
