@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | SG OVERSEAS</title>
+
+    <!-- Font Awesome Icons & Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS Grid Layout and Premium Design Block -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #faf9f2;
+        }
+
+        /* CONTACT SECTION CONTAINER */
+        .contact-section {
+            max-width: 1200px;
+            margin: 120px auto 60px auto; /* Compenses the fixed navbar */
+            padding: 0 20px;
+        }
+
+        .page-title-block {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .page-title-block h1 {
+            font-size: 42px;
+            font-weight: 700;
+            color: #182719;
+            margin-bottom: 10px;
+        }
+
+        .title-underline {
+            width: 60px;
+            height: 4px;
+            background: #cca028;
+            margin: 0 auto;
+            border-radius: 2px;
+        }
+
+        /* TWO COLUMN GRID */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .column-heading {
+            font-size: 22px;
+            font-weight: 700;
+            color: #182719;
+            margin-bottom: 25px;
+        }
+
+        /* LEFT COLUMN: INFO CARD */
+        .info-card {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 40px 35px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 22px;
+        }
+
+        .info-icon {
+            width: 45px;
+            height: 45px;
+            background: #437346;
+            color: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            margin-right: 18px;
+            flex-shrink: 0;
+        }
+
+        .info-text {
+            font-size: 15px;
+            color: #333333;
+            line-height: 1.5;
+        }
+
+        .info-text strong {
+            color: #111111;
+            font-size: 16px;
+        }
+
+        /* SOCIAL MEDIA LINKS */
+        .social-row {
+            display: flex;
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        .social-btn {
+            width: 40px;
+            height: 40px;
+            background: #437346;
+            color: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: 0.3s;
+            font-size: 16px;
+        }
+
+        .social-btn:hover {
+            background: #122b60;
+            transform: translateY(-3px);
+        }
+
+        /* RIGHT COLUMN: INQUIRY FORM */
+        .form-card {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 40px 35px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px 20px;
+            border: 1px solid #e5e5e5;
+            border-radius: 12px;
+            font-size: 15px;
+            outline: none;
+            transition: 0.3s;
+            background: #ffffff;
+        }
+
+        .form-control:focus {
+            border-color: #437346;
+            box-shadow: 0 0 0 3px rgba(67, 115, 70, 0.1);
+        }
+
+        select.form-control {
+            appearance: none;
+            background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+        }
+
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: #437346;
+            color: #ffffff;
+            padding: 15px 35px;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background: #122b60;
+        }
+
+        /* FLOATING ACTION ICON BUTTONS (WHATSAPP & CALL) */
+        .floating-buttons {
+            position: fixed;
+            right: 20px;
+            bottom: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 99999;
+        }
+
+        .float-btn {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-size: 26px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .float-btn.whatsapp { background: #25d366; }
+        .float-btn.phone { background: #52a7e6; }
+        .float-btn:hover { transform: scale(1.1); }
+
+        /* RESPONSIVE LAYOUT RESPONSES */
+        @media (max-width: 992px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ================= NEW PREMIUM NAVBAR ================= -->
+    <nav class="navbar navbar-expand-lg fixed-top" style="background: #ffffff !important; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important; padding: 10px 0 !important; border-bottom: 1px solid #e9ecef; position: fixed; width: 100%; top: 0; left: 0; z-index: 9999; display: flex !important; align-items: center !important;">
+        <div class="container" style="display: flex !important; align-items: center !important; justify-content: space-between !important; width: 90%; margin: 0 auto;">
+            
+            <!-- Logo Image + Text Container Side by Side -->
+            <a class="navbar-brand" href="index.html" style="display: flex !important; flex-direction: row !important; align-items: center !important; text-decoration: none !important; margin: 0 !important; padding: 0 !important;">
+                <img src="images/logo.png" alt="SG Logo" style="height: 60px !important; width: auto !important; max-height: 60px !important; object-fit: contain !important; margin-right: 15px !important; display: inline-block !important;">
+                
+                <div style="display: flex !important; flex-direction: column !important; justify-content: center !important; text-align: left !important;">
+                    <span style="color: #122b60 !important; font-size: 22px !important; font-weight: 800 !important; text-transform: uppercase !important; line-height: 1.1 !important; font-family: 'Poppins', sans-serif !important; display: block !important; letter-spacing: 0.5px !important;">SG OVERSEAS</span>
+                    <span style="color: #cca028 !important; font-size: 11px !important; font-weight: 700 !important; margin-top: 2px !important; line-height: 1 !important; font-family: 'Poppins', sans-serif !important; display: block !important;">Your Gateway to Global Trade</span>
+                </div>
+            </a>
+
+            <!-- Menu Navigation Links -->
+            <div class="collapse navbar-collapse" id="menu" style="display: flex !important; align-items: center !important;">
+                <ul class="navbar-nav ms-auto" style="display: flex !important; align-items: center !important; list-style: none !important; padding: 0 !important; margin: 0 !important; flex-direction: row !important;">
+                    <li class="nav-item"><a class="nav-link" href="index.html" style="color: #212529 !important; font-weight: 800 !important; font-size: 15px !important; margin-left: 18px !important; text-decoration: none !important;">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html" style="color: #212529 !important; font-weight: 800 !important; font-size: 15px !important; margin-left: 18px !important; text-decoration: none !important;">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="products.html" style="color: #212529 !important; font-weight: 800 !important; font-size: 15px !important; margin-left: 18px !important; text-decoration: none !important;">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html" style="color: #212529 !important; font-weight: 800 !important; font-size: 15px !important; margin-left: 18px !important; text-decoration: none !important;">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="certifications.html" style="color: #212529 !important; font-weight: 800 !important; font-size: 15px !important; margin-left: 18px !important; text-decoration: none !important;">Certifications</a></li>
+                    <li class="nav-item"><a class="nav-link" href="faq.html" style="color: #212529 !important; font-weight: 800 !important; font-size: 15px !important; margin-left: 18px !important; text-decoration: none !important;">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html" style="color: #198754 !important; font-weight: 800 !important; font-size: 15px !important; margin-left: 18px !important; text-decoration: none !important; border-bottom: 2px solid #198754;">Contact</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- ================= MAIN CONTACT SECTION ================= -->
+    <main class="contact-section">
+        
+        <div class="page-title-block">
+            <h1>Contact Us</h1>
+            <div class="title-underline"></div>
+        </div>
+
+        <div class="contact-grid">
+            
+            <!-- LEFT COLUMN - GET IN TOUCH -->
+            <div>
+                <h2 class="column-heading">Get In Touch</h2>
+                <div class="info-card">
+                    
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fas fa-user"></i></div>
+                        <div class="info-text">
+                            <strong>Mr. Sanskar Rajendra Gholap</strong>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="info-text">
+                            Mumbai Naka,<br>
+                            Nashik, Maharashtra, India - 422003
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fas fa-phone-alt"></i></div>
+                        <div class="info-text">+91 9370xxxxxx</div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="info-text">info@sgoverseas.com</div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fas fa-clock"></i></div>
+                        <div class="info-text">Mon - Sat: 9:00 AM - 7:00 PM (IST)</div>
+                    </div>
+
+                    <!-- Social Icons Row -->
+                    <div class="social-row">
+                        <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-btn"><i class="fab fa-twitter"></i></a>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN - SEND INQUIRY -->
+            <div>
+                <h2 class="column-heading">Send Inquiry</h2>
+                <div class="form-card">
+                    <form action="#" method="POST">
+                        
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Full Name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Company Name">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Email Address" required>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="tel" class="form-control" placeholder="Phone Number" required>
+                        </div>
+
+                        <div class="form-group">
+                            <select class="form-control" required>
+                                <option value="" disabled selected>Select Product Interest</option>
+                                <option value="onions">Fresh Onions</option>
+                                <option value="pulses">Pulses & Grains</option>
+                                <option value="spices">Spices Powder</option>
+                                <option value="other">Other Agro Products</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="Message / Quantity Required / Sample Request" required></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Send Message</button>
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ================= FLOATING ACTION SIDEBAR BUTTONS ================= -->
+    <div class="floating-buttons">
+        <a href="https//wa.me/919370xxxxxx" target="_blank" class="float-btn whatsapp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="tel:+919370xxxxxx" class="float-btn phone">
+            <i class="fas fa-phone-alt"></i>
+        </a>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,123 @@
+/* ==========================================================================
+   SG OVERSEAS GLOBAL FOOTER STYLES (foot.css)
+   ========================================================================== */
+
+.site-footer {
+  background-color: #0b150c !important; /* Premium dark forest green */
+  color: #ffffff !important;
+  padding: 60px 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 250px;
+}
+
+/* Logo & Tagline */
+.footer-logo {
+  color: #c5a85c !important; /* Brand gold */
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.footer-tagline {
+  color: #c5a85c !important;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.footer-col p {
+  color: #cccccc !important;
+  line-height: 1.6;
+  font-size: 15px;
+  margin-bottom: 25px;
+}
+
+/* Social Media Icons */
+.social-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  color: #ffffff !important;
+  border-radius: 50%;
+  margin-right: 10px;
+  transition: background 0.3s;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  background-color: #c5a85c !important;
+}
+
+/* Headings for columns */
+.footer-col h3 {
+  color: #ffffff !important;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+/* Footer Link Items */
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 15px;
+  color: #cccccc !important;
+  font-size: 15px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.footer-col ul li a {
+  color: #cccccc !important;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-col ul li a:hover {
+  color: #c5a85c !important;
+}
+
+/* Specific styling for FAQ and Highlights */
+.footer-col ul li a.highlight-link {
+  color: #c5a85c !important;
+}
+
+/* Contact Details Info Icons */
+.contact-col ul li i {
+  color: #c5a85c !important;
+  margin-right: 15px;
+  margin-top: 4px;
+  width: 20px;
+  text-align: center;
+}
+
+.contact-col ul li a {
+  color: #cccccc !important;
+}
+
+/* Responsive view layout */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+  }
+}

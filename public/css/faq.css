@@ -1,0 +1,86 @@
+/* --- MINIMALIST FAQ CLEAN LOOK --- */
+
+/* Wrapper for the soft off-white background */
+.faq-section-wrapper {
+    background-color: #fcfbfa; /* Soft warm ivory/cream background */
+    min-height: 100vh;
+}
+
+/* Gold/Yellow Accent Line under Title */
+.faq-title {
+    font-size: 2.5rem;
+    color: #1e293b;
+}
+
+.faq-title-line {
+    width: 60px;
+    height: 3px;
+    background-color: #c5a86d; /* Golden accent line */
+    border-radius: 2px;
+}
+
+/* Container spacing */
+.faq-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space out cards nicely */
+}
+
+/* Individual Pill Cards */
+.faq-item {
+    background-color: #ffffff;
+    border-radius: 16px !important; /* Soft pill shape corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03); /* Subtle soft shadows */
+    border: none;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+
+/* Question Header Layout */
+.faq-question {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 30px;
+    background: none;
+    border: none;
+    text-align: left;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #2c3e50;
+    cursor: pointer;
+    outline: none !important;
+}
+
+/* Clean Green Chevron Icon */
+.icon-toggle {
+    font-size: 1rem;
+    color: #2e7d32; /* Deep green accent arrow */
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faq-item.active .icon-toggle {
+    transform: rotate(180deg);
+}
+
+/* Content Answer Sliders */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s cubic-bezier(0, 1, 0, 1);
+}
+
+.faq-answer p {
+    padding: 0 30px 22px 30px;
+    margin: 0;
+    color: #5a6b7c;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+/* Toggle expansion states cleanly */
+.faq-item.active .faq-answer {
+    max-height: 500px;
+    transition: max-height 0.4s cubic-bezier(1, 0, 1, 0);
+}

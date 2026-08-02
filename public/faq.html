@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ | SG OVERSEAS</title>
+
+    <!-- Font Awesome Icons & Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS Styling Core -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #faf9f2;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* FAQ CONTENT CONTAINER */
+        .faq-section {
+            max-width: 900px;
+            margin: 140px auto 40px auto; /* Compenses fixed navbar */
+            padding: 0 20px;
+            flex: 1;
+        }
+
+        .page-title-block {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .page-title-block h1 {
+            font-size: 38px;
+            font-weight: 700;
+            color: #182719;
+            margin-bottom: 12px;
+        }
+
+        .title-underline {
+            width: 50px;
+            height: 4px;
+            background: #cca028;
+            margin: 0 auto 20px auto;
+            border-radius: 2px;
+        }
+
+        .page-title-block p {
+            font-size: 15px;
+            color: #667085;
+            font-weight: 400;
+        }
+
+        /* ACCORDION ACCENT LAYOUT */
+        .faq-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .faq-item {
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+            overflow: hidden;
+            transition: 0.3s ease;
+        }
+
+        .faq-header {
+            padding: 22px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+            background: #ffffff;
+            transition: background 0.3s;
+        }
+
+        .faq-header h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #182719;
+            padding-right: 15px;
+        }
+
+        .faq-icon {
+            font-size: 16px;
+            color: #437346;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+            background: #ffffff;
+            padding: 0 30px;
+        }
+
+        .faq-content p {
+            font-size: 14px;
+            color: #555555;
+            line-height: 1.6;
+            padding-bottom: 22px;
+        }
+
+        /* Active Toggle Status classes */
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        /* STILL HAVE QUESTIONS BOX */
+        .still-questions-box {
+            background: #f1efe6;
+            border-radius: 24px;
+            padding: 40px 30px;
+            text-align: center;
+            margin: 60px auto 40px auto;
+            max-width: 900px;
+            width: 90%;
+        }
+
+        .still-questions-box h2 {
+            font-size: 26px;
+            font-weight: 700;
+            color: #182719;
+            margin-bottom: 10px;
+        }
+
+        .still-questions-box p {
+            font-size: 15px;
+            color: #555555;
+            margin-bottom: 25px;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            background: #182719;
+            color: #ffffff;
+            padding: 14px 32px;
+            border-radius: 30px;
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.3s ease;
+        }
+
+        .contact-btn:hover {
+            background: #cca028;
+            transform: translateY(-2px);
+        }
+
+        /* PREMIUM FOOTER */
+        .main-footer {
+            background: #182719;
+            color: #ffffff;
+            padding: 60px 0 30px 0;
+            margin-top: auto;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr 1fr;
+            gap: 40px;
+        }
+
+        .footer-column h3 {
+            color: #cca028;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-column h4 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .footer-column p {
+            font-size: 14px;
+            color: #d1d5db;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 10px;
+        }
+
+        .footer-socials a {
+            width: 38px;
+            height: 38px;
+            background: rgba(255,255,255,0.1);
+            color: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .footer-socials a:hover {
+            background: #cca028;
+            color: #182719;
+            transform: translateY(-3px);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #d1d5db;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #cca028;
+            padding-left: 5px;
+        }
+
+        .footer-contact-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: flex-start;
+            font-size: 14px;
+            color: #d1d5db;
+            line-height: 1.5;
+        }
+
+        .footer-contact-item i {
+            color: #cca028;
+            margin-right: 12px;
+            margin-top: 4px;
+            font-size: 16px;
+            width: 15px;
+            text-align: center;
+        }
+
+        /* FLOATING ACTION SIDEBAR BUTTONS */
+        .floating-buttons {
+            position: fixed;
+            right: 20px;
+            bottom: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 99999;
+        }
+
+        .float-btn {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-size: 26px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .float-btn.whatsapp { background: #25d366; }
+        .float-btn.phone { background: #52a7e6; }
+        .float-btn:hover { transform: scale(1.1); }
+
+        /* RESPONSIVE FOOTER LAYOUT */
+        @media (max-width: 768px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ================= PREMIUM FIXED NAVBAR ================= -->
+    <nav class="navbar navbar-expand-lg fixed-top" style="background: #ffffff !important; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important; padding: 10px 0 !important; border-bottom: 1px solid #e9ecef; position: fixed; width: 100%; top: 0; left: 0; z-index: 9999; display: flex !important; align-items: center !important;">
+        <div class="container" style="display: flex !important; align-items: center !important; justify-content: space-between !important; width: 90%; margin: 0 auto;">
+            
+            <a class="navbar-brand" href="index.html" style="display: flex !important; flex-direction: row !important; align-items: center !important; text-decoration: none !important; margin: 0 !important; padding: 0 !important;">
+                <img src="images/logo.png" alt="SG Logo" style="height: 60px !important; width: auto !important; max-height: 60px !important; object-fit: contain !important; margin-right: 15px !important; display: inline-block !important;">
+                
+                <div style="display: flex !important; flex-direction: column !important; justify-content: center !important; text-align: left !important;">
+                    <span style="color: #122b60 !important; font-size: 22px !important; font-weight: 800 !important; text-transform: uppercase !important; line-height: 1.1 !important; font-family: 'Poppins', sans-serif !important; display: block !important; letter-spacing: 0.5px !important;">SG OVERSEAS</span>
+                    <span style="color: #cca028 !important; font-size: 11px !important; font-weight: 700 !important; margin-top: 2px !important; line-height: 1 !important; font-family: 'Poppins', sans-serif !important; display: block !important;">Your Gateway to Global Trade</span>
+                </div>
+            </a>
+
+            <div class="collapse navbar-collapse" id="menu" style="display: flex !important; align-items: center !important;">
+                <ul class="navbar-nav ms-auto" style="display: flex !important; align-items: center !important; list-style: none !important; padding: 0 !important; margin: 0 !important; flex-direction: row !important;">
+                    <li class="nav-item"><a class="nav-link" href="index.html" style="color: #212529 !important; font-weight: 800 !important; font-size: 15px !important; margin-left: 18px !important; text-decoration: none !important;">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html" style="color: #212529 !important; font-weight: 800 !important; font-size: 15px !important; margin-left: 18px !important; text-decoration: none !important;">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="products.html" style="color: #212529 !important; font-weight: 800 !important; font-size: 15px !important; margin-left: 18px !important; text-decoration: none !important;">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html" style="color: #212529 !important; font-weight: 800 !important; font-size: 15px !important; margin-left: 18px !important; text-decoration: none !important;">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="certifications.html" style="color: #212529 !important; font-weight: 800 !important; font-size: 15px !important; margin-left: 18px !important; text-decoration: none !important;">Certifications</a></li>
+                    <li class="nav-item"><a class="nav-link" href="faq.html" style="color: #198754 !important; font-weight: 800 !important; font-size: 15px !important; margin-left: 18px !important; text-decoration: none !important; border-bottom: 2px solid #198754;">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html" style="color: #212529 !important; font-weight: 800 !important; font-size: 15px !important; margin-left: 18px !important; text-decoration: none !important;">Contact</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- ================= MAIN FAQ SECTION ================= -->
+    <main class="faq-section">
+        
+        <div class="page-title-block">
+            <h1>Frequently Asked Questions</h1>
+            <div class="title-underline"></div>
+            <p>Find answers to common questions about our products and services</p>
+        </div>
+
+        <div class="faq-container">
+            
+            <!-- Question 1 -->
+            <div class="faq-item">
+                <div class="faq-header">
+                    <h3>What is your minimum order quantity (MOQ)?</h3>
+                    <div class="faq-icon"><i class="fas fa-chevron-down"></i></div>
+                </div>
+                <div class="faq-content">
+                    <p>Our Minimum Order Quantity (MOQ) depends on the specific agro-product requested. Typically, for bulk container exports like fresh onions or ground spices, it ranges from 1 Full Container Load (FCL). Please connect with our team on the Contact page for smaller tailored requirements.</p>
+                </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="faq-item">
+                <div class="faq-header">
+                    <h3>Do you provide samples before bulk order?</h3>
+                    <div class="faq-icon"><i class="fas fa-chevron-down"></i></div>
+                </div>
+                <div class="faq-content">
+                    <p>Yes, SG Overseas provides product samples for quality verification before final commitments. While the samples themselves are free of cost in standard packages, international customs clearance and courier shipping charges are borne by the client.</p>
+                </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="faq-item">
+                <div class="faq-header">
+                    <h3>What are your payment terms?</h3>
+                    <div class="faq-icon"><i class="fas fa-chevron-down"></i></div>
+                </div>
+                <div class="faq-content">
+                    <p>We work with standard global trade compliance options: 100% Irrevocable Letter of Credit (L/C) at sight, or an advance T/T (Telegraphic Transfer) split with balance payment settled against scanned shipping bills of lading (B/L) documents.</p>
+                </div>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="faq-item">
+                <div class="faq-header">
+                    <h3>How do you ensure product quality?</h3>
+                    <div class="faq-icon"><i class="fas fa-chevron-down"></i></div>
+                </div>
+                <div class="faq-content">
+                    <p>Quality control is central to our exports. We source directly from trusted farm clusters and perform strict sorting/packaging checks. Additionally, we facilitate verified inspections through international agencies like SGS before dispatch to match dynamic global trade benchmarks.</p>
+                </div>
+            </div>
+
+            <!-- New Question 5 -->
+            <div class="faq-item">
+                <div class="faq-header">
+                    <h3>What packaging options do you offer for agro exports?</h3>
+                    <div class="faq-icon"><i class="fas fa-chevron-down"></i></div>
+                </div>
+                <div class="faq-content">
+                    <p>We provide multiple high-grade packaging materials including Mesh/Leno bags for fresh onions, jute bags for grains, and multi-layer vacuum sealed packing for spices powder to preserve optimal freshness, aroma, and long shelf life during sea transit.</p>
+                </div>
+            </div>
+
+            <!-- New Question 6 -->
+            <div class="faq-item">
+                <div class="faq-header">
+                    <h3>Which international ports do you ship from?</h3>
+                    <div class="faq-icon"><i class="fas fa-chevron-down"></i></div>
+                </div>
+                <div class="faq-content">
+                    <p>Most of our shipments originate from Jawaharlal Nehru Port (JNPT), Mumbai, which is well-connected for quick agro-product transit globally. However, based on regional availability and client preferences, logistics can be aligned through other major Indian ports.</p>
+                </div>
+            </div>
+
+            <!-- New Question 7 -->
+            <div class="faq-item">
+                <div class="faq-header">
+                    <h3>Are your agricultural products organically certified?</h3>
+                    <div class="faq-icon"><i class="fas fa-chevron-down"></i></div>
+                </div>
+                <div class="faq-content">
+                    <p>We offer both premium conventional produce and certified organic categories for specific spices and pulses. All details, along with compliance certifications like APEDA or phytosanitary documents, are attached to the consignment file transparently.</p>
+                </div>
+            </div>
+
+            <!-- New Question 8 -->
+            <div class="faq-item">
+                <div class="faq-header">
+                    <h3>How long does the delivery take after order confirmation?</h3>
+                    <div class="faq-icon"><i class="fas fa-chevron-down"></i></div>
+                </div>
+                <div class="faq-content">
+                    <p>Post advance payment or L/C confirmation, sorting and packaging take 7-10 working days. The ocean freight delivery duration varies purely depending on the target destination port country (typically 15 to 30 days).</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ================= STILL HAVE QUESTIONS BOX ================= -->
+    <section class="still-questions-box">
+        <h2>Still have questions?</h2>
+        <p>We're here to help! Contact our support team for any additional inquiries.</p>
+        <a href="contact.html" class="contact-btn">Contact Us →</a>
+    </section>
+
+    <!-- ================= PREMIUM DYNAMIC FOOTER ================= -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            
+            <!-- Left Info Block -->
+            <div class="footer-column">
+                <h3>SG OVERSEAS</h3>
+                <p style="margin-bottom: 8px; font-weight: 600; color: #cca028;">Your Gateway to Global Trade</p>
+                <p>Premium quality fresh and dehydrated agricultural products exporter from Nashik, India.</p>
+                <div class="footer-socials">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <!-- Center Links Block -->
+            <div class="footer-column" style="padding-left: 20px;">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="products.html">All Products</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="certifications.html">Certifications</a></li>
+                    <li><a href="faq.html" style="color: #cca028;">FAQ</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Right Contact Block -->
+            <div class="footer-column">
+                <h4>Contact Info</h4>
+                <div class="footer-contact-list">
+                    <div class="footer-contact-item">
+                        <i class="fas fa-user"></i>
+                        <span>Mr. Sanskar Rajendra Gholap</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>+91 9370x xxxxx</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@sgoverseas.com</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Mumbai Naka, Nashik, Maharashtra, India - 422003</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-file-invoice"></i>
+                        <span>GST: 27FSUPK4415G1ZC</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-globe"></i>
+                        <span>IEC: FSUPK4415G</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- ================= FLOATING ACTION ACCENT BUTTONS ================= -->
+    <div class="floating-buttons">
+        <a href="https://wa.me/917391031969" target="_blank" class="float-btn whatsapp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="tel:+917391031969" class="float-btn phone">
+            <i class="fas fa-phone-alt"></i>
+        </a>
+    </div>
+
+    <!-- Dynamic Accordion Toggle Script Core -->
+    <script>
+        document.querySelectorAll('.faq-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                const content = item.querySelector('.faq-content');
+                
+                // Close other items if open
+                document.querySelectorAll('.faq-item').forEach(otherItem => {
+                    if (otherItem !== item && otherItem.classList.contains('active')) {
+                        otherItem.classList.remove('active');
+                        otherItem.querySelector('.faq-content').style.maxHeight = null;
+                    }
+                });
+
+                // Toggle Current active status
+                item.classList.toggle('active');
+                if (item.classList.contains('active')) {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                } else {
+                    content.style.maxHeight = null;
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

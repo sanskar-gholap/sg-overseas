@@ -1,0 +1,22 @@
+@media (max-width: 992px) {
+    .grid-3 { grid-template-columns: repeat(2, 1fr); }
+    .products-showcase-wrapper { grid-template-columns: 1fr; }
+    .products-gateway-sidebar .sidebar-inner { position: static; margin-top: 20px; }
+    .slide-content h1 { font-size: 2.6rem; }
+}
+
+@media (max-width: 768px) {
+    .grid-2, .grid-3 { grid-template-columns: 1fr; gap: 25px; }
+    .navbar { display: none; position: absolute; top: 100%; left: 0; width: 100%; background-color: var(--white); box-shadow: 0 8px 15px rgba(0,0,0,0.08); border-top: 1px solid #eee; }
+    .navbar.active { display: block; }
+    .navbar ul { flex-direction: column; padding: 15px 0; }
+    .navbar ul li a { display: block; padding: 12px 25px; border-bottom: 1px solid #f5f5f5; }
+    .navbar ul li a:hover, .navbar ul li a.active { border-bottom: none; background-color: var(--light-neutral); padding-left: 30px; }
+    .menu-toggle { display: block; }
+    .slide-content h1 { font-size: 2rem; }
+    .slide-content p { font-size: 1.1rem; }
+    .mosaic-main { width: 100%; height: 280px; }
+    .mosaic-secondary { display: none; }
+    .experience-years-counter { left: 10px; top: -10px; }
+    .products-grid-layout { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SG OVERSEAS | Import & Export</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+
+    <!-- Loader -->
+    <div class="loader" id="loader"></div>
+
+    <!-- Navbar -->
+  <!-- ================= NAVBAR ================= -->
+<nav class="navbar navbar-expand-lg fixed-top" style="background: #ffffff !important; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important; padding: 10px 0 !important; border-bottom: 1px solid #e9ecef;">
+    <div class="container" style="display: flex !important; align-items: center !important; justify-content: space-between !important;">
+        
+        <!-- Logo Image + Text Container Side by Side -->
+        <a class="navbar-brand" href="index.html" style="display: flex !important; flex-direction: row !important; align-items: center !important; text-decoration: none !important; margin: 0 !important; padding: 0 !important;">
+            <!-- Force Logo Size directly here -->
+            <img src="images/logo.png" alt="SG Logo" style="height: 60px !important; width: auto !important; max-height: 60px !important; object-fit: contain !important; margin-right: 15px !important; display: inline-block !important;">
+            
+            <!-- Brand Text Vector Stack -->
+            <div style="display: flex !important; flex-direction: column !important; justify-content: center !important; text-align: left !important;">
+                <span style="color: #122b60 !important; font-size: 22px !important; font-weight: 800 !important; text-transform: uppercase !important; line-height: 1.1 !important; font-family: 'Poppins', sans-serif !important; display: block !important; letter-spacing: 0.5px !important;">SG OVERSEAS</span>
+                <span style="color: #cca028 !important; font-size: 11px !important; font-weight: 700 !important; margin-top: 2px !important; line-height: 1 !important; font-family: 'Poppins', sans-serif !important; display: block !important;">Your Gateway to Global Trade</span>
+            </div>
+        </a>
+
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu" style="border-color: rgba(0,0,0,0.1);">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menu">
+            <ul class="navbar-nav ms-auto" style="display: flex !important; align-items: center !important;">
+                <li class="nav-item"><a class="nav-link" href="index.html" style="color: #212529 !important; font-weight: 800 !important; font-size: 16px !important; margin-left: 18px !important;">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html" style="color: #212529 !important; font-weight: 800 !important; font-size: 16px !important; margin-left: 18px !important;">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="products.html" style="color: #212529 !important; font-weight: 800 !important; font-size: 16px !important; margin-left: 18px !important;">Products</a></li>
+                <li class="nav-item"><a class="nav-link" href="gallery.html" style="color: #212529 !important; font-weight: 800 !important; font-size: 16px !important; margin-left: 18px !important;">Gallery</a></li>
+                <li class="nav-item"><a class="nav-link" href="certifications.html" style="color: #212529 !important; font-weight: 800 !important; font-size: 16px !important; margin-left: 18px !important;">Certifications</a></li>
+                <li class="nav-item"><a class="nav-link" href="faq.html" style="color: #212529 !important; font-weight: 800 !important; font-size: 16px !important; margin-left: 18px !important;">FAQ</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html" style="color: #212529 !important; font-weight: 800 !important; font-size: 16px !important; margin-left: 18px !important;">Contact</a></li>
+            </ul>
+        </div>
+
+    </div>
+</nav>
+</section>
+
+    <!-- Hero Section -->
+    <!-- ================= HERO BACKGROUND SLIDER ================= -->
+<section class="hero position-relative" style="height: 75vh; min-height: 500px; background-color: #f8f9fa; overflow: hidden;">
+    
+    <!-- The Slider Wrapper Layer -->
+    <div id="carouselExampleFade" class="carousel slide carousel-fade h-100" data-bs-ride="carousel" data-bs-interval="4000">
+        <div class="carousel-inner h-100">
+            
+            <!-- Slide 1 (Active) -->
+            <div class="carousel-item active h-100">
+                <img src="images/Veg.png" class="d-block w-100 h-100" style="object-fit: cover;" alt="Premium Vegetables">
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="carousel-item h-100">
+                <img src="images/Expo.png" class="d-block w-100 h-100" style="object-fit: cover;" alt="Export Goods">
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="carousel-item h-100">
+                <img src="images/Expo1.png" class="d-block w-100 h-100" style="object-fit: cover;" alt="Global Shipping">
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="carousel-item h-100">
+                <img src="images/Expo2.png" class="d-block w-100 h-100" style="object-fit: cover;" alt="Quality Control">
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Dark Shade Overlay (Ensures your white text remains easily readable) -->
+    <div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0, 0, 0, 0.45); pointer-events: none; z-index: 1;"></div>
+
+    <!-- Foreground Content Layer (Sits centered directly over the photos) -->
+    <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center text-center text-white" style="z-index: 2;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <h1 class="display-4 fw-bold mb-3 text-white" style="text-shadow: 2px 2px 8px rgba(0,0,0,0.6);">
+                        Premium Agricultural Import & Export Company
+                    </h1>
+                    <p class="lead mb-4 text-light fw-medium" style="text-shadow: 1px 1px 5px rgba(0,0,0,0.6);">
+                        Delivering India's Finest Agricultural Products to Global Markets with Quality, Trust, and Reliability.
+                    </p>
+                    <div class="d-flex justify-content-center gap-3">
+                        <a href="products.html" class="btn btn-success btn-lg px-4 py-2 fw-bold shadow">Explore Products</a>
+                        <a href="contact.html" class="btn btn-outline-light btn-lg px-4 py-2 fw-bold shadow">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+    <!-- Featured Products -->
+    <section class="featured-products py-5 bg-light" id="products">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="section-tag">Our Products</span>
+                <h2 class="section-title">Featured Export Products</h2>
+                <p>We export premium quality agricultural products worldwide.</p>
+            </div>
+            <div class="row g-4">
+                <!-- Onion -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="product-card">
+                        <div class="product-img"><img src="images/onion.png" class="img-fluid" alt="Onion"></div>
+                        <div class="product-content">
+                            <h4>Fresh Onion</h4>
+                            <p>Premium export quality red onions directly from Indian farms.</p>
+                            <a href="onion.html" class="product-btn">View Product</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Potato -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="product-card">
+                        <div class="product-img"><img src="images/potato.png" class="img-fluid" alt="Potato"></div>
+                        <div class="product-content">
+                            <h4>Fresh Potato</h4>
+                            <p>Naturally grown potatoes with excellent shelf life.</p>
+                            <a href="potato.html" class="product-btn">View Product</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Ginger -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="product-card">
+                        <div class="product-img"><img src="images/ginger.png" class="img-fluid" alt="Ginger"></div>
+                        <div class="product-content">
+                            <h4>Fresh Ginger</h4>
+                            <p>Fresh Indian ginger rich in aroma and medicinal value.</p>
+                            <a href="ginger.html" class="product-btn">View Product</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Chilli -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="product-card">
+                        <div class="product-img"><img src="images/chilli.png" class="img-fluid" alt="Chilli"></div>
+                        <div class="product-content">
+                            <h4>Fresh Green Chilli</h4>
+                            <p>Hand-picked fresh green chillies with export-grade quality.</p>
+                            <a href="chilli.html" class="product-btn">View Product</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <a href="products.html" class="btn btn-success btn-lg">View All Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="about-img">
+                        <img src="images/gallery11.png" class="img-fluid rounded shadow" alt="About">
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="about-content ps-lg-4">
+                        <span class="section-tag">About SG Companies</span>
+                        <h2 class="section-title">Trusted Agricultural Export Company</h2>
+                        <p>SG Companies specializes in exporting premium-quality agricultural products from India to customers around the globe. We are committed to freshness, international quality standards, and timely delivery.</p>
+                        <div class="row mt-4 g-3">
+                            <div class="col-6"><h5>✔ Premium Quality</h5><p>Fresh farm products.</p></div>
+                            <div class="col-6"><h5>✔ Worldwide Export</h5><p>Global shipping network.</p></div>
+                            <div class="col-6"><h5>✔ Secure Packaging</h5><p>Safe transportation.</p></div>
+                            <div class="col-6"><h5>✔ Fast Delivery</h5><p>Reliable logistics.</p></div>
+                        </div>
+                        <a href="about.html" class="btn btn-success mt-4">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<section class="about-section" style="padding: 60px 0;">
+  <div class="container">
+    
+    <!-- Bold Main Heading -->
+    <div class="row">
+      <div class="col-12">
+        <h2 style="font-weight: bold; margin-bottom: 30px; color: #333; font-size: 32px;">About Founder</h2>
+      </div>
+    </div>
+
+    <!-- Content Row with Top Alignment -->
+    <div class="row" style="display: flex; align-items: flex-start;">
+      
+      <!-- Left Side: Founder's Biography -->
+      <div class="col-md-7 biographical-info" style="padding-right: 30px;">
+        <!-- Made Name Bold, Larger, and Reduced Overall Sub-heading Size for Better Wrapping -->
+        <h3 style="font-size: 20px; font-weight: normal; color: #444; line-height: 1.4; margin-bottom: 20px; margin-top: 0;">
+          <strong style="font-size: 24px; color: #111;">Mr. Sanskar Rajendra Gholap</strong> - Founder, SG OVERSEAS | Nasik, Maharashtra (India)
+        </h3>
+        
+        <p style="line-height: 1.6; color: #555; font-size: 15px; margin-bottom: 15px;">Rooted in a rich heritage of agriculture and trade, Mr. Sanskar Rajendra Gholap is the visionary founder of <strong>SG OVERSEAS</strong>. <strong>With over 7 years of dedicated experience in the Agri-products sector</strong>, Sanskar's journey began with hands-on experience at the grassroots level.</p>
+        
+        <p style="line-height: 1.6; color: #555; font-size: 15px; margin-bottom: 15px;">This deep connection to the land has given him an unparalleled understanding of the true strength and superior quality of Indian agricultural produce.</p>
+        
+        <p style="line-height: 1.6; color: #555; font-size: 15px; margin-bottom: 15px;">For the past seven years, Sanskar has been a vital player in the domestic market, consistently supplying premium-grade produce to several renowned exporters. This extensive background has equipped him with expertise that goes beyond just sourcing; he possesses a profound mastery of <strong>international packaging standards, complex logistics, and a precise understanding of global client requirements</strong>.</p>
+        
+        <p style="line-height: 1.6; color: #555; font-size: 15px; margin-bottom: 25px;">After years of contributing significantly to the export industry from the backend, he has now stepped into the global marketplace directly with his flagship brand, <strong>SG OVERSEAS</strong>.</p>
+        
+        <!-- Social Media Icons -->
+        <div class="social-icons" style="margin-top: 20px;">
+          <a href="#" class="btn-social fb" style="margin-right: 10px; display: inline-block;"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="btn-social insta" style="margin-right: 10px; display: inline-block;"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="btn-social linkedin" style="margin-right: 10px; display: inline-block;"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="btn-social twitter" style="display: inline-block;"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+
+      <!-- Right Side: Business Info Card -->
+      <div class="col-md-5 business-card-container">
+        <div class="business-card" style="border: 1px solid #f0f0f0; border-radius: 15px; padding: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); background: #fff; margin-top: 0;">
+          <h4 style="margin-top: 0; margin-bottom: 25px; font-weight: bold; color: #333; font-size: 22px;">Business Information</h4>
+          
+          <ul style="list-style: none; padding-left: 0; margin-bottom: 0;">
+            <!-- Founder Name -->
+            <li style="display: flex; align-items: center; margin-bottom: 20px;">
+              <span style="background-color: #5cb85c; color: white; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0;">
+                <i class="fas fa-user"></i>
+              </span>
+              <span style="color: #555; font-size: 15px;">Mr. Sanskar Rajendra Gholap</span>
+            </li>
+            
+            <!-- Address -->
+            <li style="display: flex; align-items: flex-start; margin-bottom: 20px;">
+              <span style="background-color: #5cb85c; color: white; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0;">
+                <i class="fas fa-map-marker-alt"></i>
+              </span>
+              <span style="color: #555; line-height: 1.4; font-size: 15px;">Shivkrupa Mahalaximi Nagar, Makhamalabad, Nashik, Maharashtra, India</span>
+            </li>
+            
+            <!-- Phone -->
+            <li style="display: flex; align-items: center; margin-bottom: 20px;">
+              <span style="background-color: #5cb85c; color: white; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0;">
+                <i class="fas fa-phone-alt"></i>
+              </span>
+              <a href="tel:+917391031969" style="color: #555; text-decoration: none; font-size: 15px;">+91 7391031969</a>
+            </li>
+            
+            <!-- Email -->
+            <li style="display: flex; align-items: center; margin-bottom: 20px;">
+              <span style="background-color: #5cb85c; color: white; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0;">
+                <i class="fas fa-envelope"></i>
+              </span>
+              <a href="mailto:info@shripadoverseas.com" style="color: #555; text-decoration: none; font-size: 15px;">info@shripadoverseas.com</a>
+            </li>
+            
+            <!-- GST -->
+            <li style="display: flex; align-items: center; margin-bottom: 20px;">
+              <span style="background-color: #5cb85c; color: white; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0;">
+                <i class="fas fa-file-invoice"></i>
+              </span>
+              <span style="color: #555; font-size: 15px;"><strong>GST:</strong> 27FSUPK4415G1ZC</span>
+            </li>
+            
+            <!-- IEC -->
+            <li style="display: flex; align-items: center;">
+              <span style="background-color: #5cb85c; color: white; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0;">
+                <i class="fas fa-globe"></i>
+              </span>
+              <span style="color: #555; font-size: 15px;"><strong>IEC:</strong> FSUPK4415G</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+    <!-- Why Choose Us -->
+    <section class="why-us py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5"><h2 class="section-title">Why Choose SG Companies</h2></div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6"><div class="choose-card text-center"><i class="fa-solid fa-award"></i><h4>Premium Quality</h4><p>High-quality export products sourced directly from trusted farms.</p></div></div>
+                <div class="col-lg-3 col-md-6"><div class="choose-card text-center"><i class="fa-solid fa-ship"></i><h4>Global Shipping</h4><p>Reliable worldwide logistics with timely delivery.</p></div></div>
+                <div class="col-lg-3 col-md-6"><div class="choose-card text-center"><i class="fa-solid fa-box"></i><h4>Safe Packaging</h4><p>International standard packaging for maximum freshness.</p></div></div>
+                <div class="col-lg-3 col-md-6"><div class="choose-card text-center"><i class="fa-solid fa-handshake"></i><h4>Trusted Partner</h4><p>Building long-term relationships through honesty and quality.</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Counter Section -->
+    <section class="stats-section py-5 bg-green">
+        <div class="container">
+            <div class="row text-center g-4">
+                <div class="col-md-3 col-6"><div class="stat-card"><h2>20+</h2><p>Countries</p></div></div>
+                <div class="col-md-3 col-6"><div class="stat-card"><h2>500+</h2><p>Happy Clients</p></div></div>
+                <div class="col-md-3 col-6"><div class="stat-card"><h2>1000+</h2><p>Shipments</p></div></div>
+                <div class="col-md-3 col-6"><div class="stat-card"><h2>100%</h2><p>Quality Assurance</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Export Countries -->
+    <section class="export-countries py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="section-tag">Global Presence</span>
+                <h2 class="section-title">Countries We Export To</h2>
+                <p>Serving customers across multiple international markets.</p>
+            </div>
+            <div class="row text-center g-4">
+                <div class="col-lg-2 col-md-4 col-6"><div class="export-card">🌍<h5>UAE</h5></div></div>
+                <div class="col-lg-2 col-md-4 col-6"><div class="export-card">🌍<h5>Saudi Arabia</h5></div></div>
+                <div class="col-lg-2 col-md-4 col-6"><div class="export-card">🌍<h5>Qatar</h5></div></div>
+                <div class="col-lg-2 col-md-4 col-6"><div class="export-card">🌍<h5>Oman</h5></div></div>
+                <div class="col-lg-2 col-md-4 col-6"><div class="export-card">🌍<h5>Malaysia</h5></div></div>
+                <div class="col-lg-2 col-md-4 col-6"><div class="export-card">🌍<h5>Singapore</h5></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="container my-5"><div class="cta-section text-center text-lg-start"><div class="row align-items-center"><div class="col-lg-8"><h2>Ready to Import Premium Agricultural Products?</h2><p>Partner with SG Companies for reliable export solutions worldwide.</p></div><div class="col-lg-4 text-lg-end"><a href="contact.html" class="btn btn-light btn-lg text-success fw-bold">Request Quote</a></div></div></div></section>
+
+    
+
+    <!-- Back to Top Button -->
+    <button id="backToTop"><i class="fas fa-angle-up"></i></button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
+        // Hide loader when page loads
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('loader');
+            if(loader) loader.style.display = 'none';
+        });
+        // Scroll interaction for navbar and backToTop button
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.navbar');
+            const topBtn = document.getElementById('backToTop');
+            if(window.scrollY > 50) {
+                nav.classList.add('scrolled');
+                if(topBtn) topBtn.style.display = 'block';
+            } else {
+                nav.classList.remove('scrolled');
+                if(topBtn) topBtn.style.display = 'none';
+            }
+        });
+        if(document.getElementById('backToTop')) {
+            document.getElementById('backToTop').addEventListener('click', () => {
+                window.scrollTo({top: 0, behavior: 'smooth'});
+            });
+        }
+    </script>
+</body>
+</html>
+
+
+<footer class="site-footer">
+  <div class="footer-container">
+    
+    <!-- Column 1: About -->
+    <div class="footer-col about-col">
+      <h2 class="footer-logo">SG OVERSEAS</h2>
+      <h3 class="footer-tagline">Your Gateway to Global Trade</h3>
+      <p>Premium quality fresh and dehydrated agricultural products exporter from Nashik, India.</p>
+      <div class="social-icons">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+
+    <!-- Column 2: Quick Links -->
+   
+<div class="footer-col links-col">
+  <h3>Quick Links</h3>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="product-details.html">All Products</a></li> <!-- check if you have a products.html or product-details.html -->
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="certifications.html">Certifications</a></li>
+    <li><a href="faq.html" class="highlight-link">FAQ</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+  </ul>
+</div>
+
+    <!-- Column 3: Contact Info -->
+    <div class="footer-col contact-col">
+      <h3>Contact Info</h3>
+      <ul>
+        <li><i class="fas fa-user"></i> Mr. Sanskar Rajendra Gholap</li>
+        <li><i class="fas fa-phone-alt"></i> +91 9370x xxxxx</li>
+        <li><i class="fas fa-envelope"></i> <a href="mailto:info@sgoverseas.com">info@sgoverseas.com</a></li>
+        <li><i class="fas fa-map-marker-alt"></i> Mumbai Naka, Nashik, Maharashtra, India - 422003</li>
+        <li><i class="fas fa-file-invoice"></i> GST: 27FSUPK4415G1ZC</li>
+        <li><i class="fas fa-globe"></i> IEC: FSUPK4415G</li>
+      </ul>
+    </div>
+
+  </div>
+</footer>

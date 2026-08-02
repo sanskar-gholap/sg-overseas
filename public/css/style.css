@@ -1,0 +1,586 @@
+/*==================================================
+    SG Companies - Professional CSS Consolidated
+==================================================*/
+
+:root {
+    --primary: #198754;
+    --primary-dark: #146c43;
+    --secondary: #f4b400;
+    --secondary-dark: #d79a00;
+    --white: #ffffff;
+    --light: #f8f9fa;
+    --gray: #6c757d;
+    --dark: #212529;
+    --border: #e9ecef;
+    --shadow: 0 10px 30px rgba(0,0,0,.10);
+    --shadow-hover: 0 18px 45px rgba(0,0,0,.18);
+    --transition: .35s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fff;
+    color: var(--dark);
+    overflow-x: hidden;
+    line-height: 1.7;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #2ada5f; }
+::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 20px; }
+
+/* Global structural rules */
+a { text-decoration: none; transition: var(--transition); }
+section { padding: 90px 0; }
+h1, h2, h3, h4, h5, h6 { font-weight: 700; color: var(--dark); }
+p { color: #555555; font-size: 16px; }
+
+/* Navbar design configuration */
+.navbar {
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    transition: .4s;
+    background: #ffffff !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+    padding: 12px 0 !important;
+}
+
+.navbar.scrolled {
+    background: #ffffff !important;
+    padding: 10px 0 !important;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+    display: flex !important;
+    align-items: center !important;
+}
+
+.navbar-brand img {
+    height: 50px !important;
+    width: auto !important;
+    object-fit: contain !important;
+    margin-right: 12px !important;
+}
+
+.brand-text-container {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.navbar-brand .brand-title {
+    color: #122b60 !important; /* Premium Navy Blue */
+    font-size: 24px !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    line-height: 1.1 !important;
+    letter-spacing: 0.5px !important;
+}
+
+.navbar-brand .brand-subtitle {
+    color: #cca028 !important; /* Premium Gold */
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    margin-top: 2px !important;
+    letter-spacing: 0.2px !important;
+}
+
+.nav-link {
+    color: #212529 !important; /* White bg par links dikhane ke liye dark color */
+    font-weight: 800 !important; /* Extra Bold */
+    font-size: 16px !important;
+    margin-left: 18px !important;
+    position: relative;
+}
+
+.nav-link::after {
+    content: ""; position: absolute; width: 0; height: 2px;
+    background: var(--secondary); bottom: -6px; left: 0; transition: .35s;
+}
+
+.nav-link:hover::after, .nav-link.active::after { width: 100%; }
+.navbar .btn-success {
+    font-weight: 800 ;
+}
+.nav-link:hover::after, .nav-link.active::after { width: 100%; }
+
+/* Hero Banner layout space */
+/* Change Line 116 to this: */
+.hero { position: relative; min-height: 20vh; overflow: hidden; display: flex; align-items: center; }
+.hero-img { width: 100%; height: 100%; object-fit: cover; }
+.overlay { position: absolute; inset: 0; background: linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.5)); z-index: 1; }
+.hero .container { position: relative; z-index: 2; }
+.hero-content {
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    padding: 40px 50px;
+    border-radius: 20px;
+    text-align: center;
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+.hero-content h1 { font-size: 52px; color: #fff; margin: 10px 0; }
+.hero-content h2 { font-size: 24px; color: var(--secondary); margin-bottom: 15px; }
+.hero-content h4 { color: #ddd; font-weight: 400; }
+.hero-content p { color: #f5f5f5; font-size: 18px; max-width: 720px; margin: auto; }
+
+/* Structural Tag Elements */
+.section-tag {
+    display: inline-block; background: rgba(25, 135, 84, 0.1);
+    color: var(--primary); padding: 8px 18px; border-radius: 40px;
+    font-size: 14px; font-weight: 600; margin-bottom: 15px;
+}
+.section-title {
+  font-size: 48px;
+  margin-bottom: 18px;
+  font-weight: 900 !important; /* ◄ Set to 800 or 900 for extra bold */
+}
+
+/* Card components matrix placement */
+.choose-card, .export-card {
+    background: #fff; border-radius: 20px; padding: 35px;
+    box-shadow: var(--shadow); transition: .4s; height: 100%;
+}
+.choose-card:hover, .export-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-hover); }
+.choose-card i, .export-card i { font-size: 42px; color: var(--primary); margin-bottom: 18px; }
+
+/* Product Display Block cards */
+.product-card { background: #fff; border-radius: 22px; overflow: hidden; box-shadow: var(--shadow); transition: .45s; height: 100%; }
+.product-card:hover { transform: translateY(-12px); box-shadow: var(--shadow-hover); }
+.product-img { height: 230px; overflow: hidden; }
+.product-img img { width: 100%; height: 100%; object-fit: cover; transition: .6s; }
+.product-card:hover .product-img img { transform: scale(1.1); }
+.product-content { padding: 25px; text-align: center; }
+.product-content h4 { font-size: 22px; margin-bottom: 12px; }
+
+/* Action Interface Buttons styling */
+.btn-success, .product-btn {
+    background: linear-gradient(135deg, var(--primary), #28a745);
+    color: #fff; border: none; padding: 12px 28px; border-radius: 50px;
+    font-weight: 600; display: inline-block; box-shadow: 0 8px 20px rgba(25,135,84,.25);
+}
+.btn-success:hover, .product-btn:hover { transform: translateY(-3px); box-shadow: 0 16px 35px rgba(25,135,84,.35); color: #fff; }
+
+/* Counter and Static Data elements style block */
+.stats-section { background: linear-gradient(135deg,#198754,#146c43); color: #fff; }
+.stat-card { background: rgba(255,255,255,.08); backdrop-filter: blur(12px); border-radius: 18px; padding: 35px; text-align: center; }
+.stat-card h2 { color: #fff; font-size: 44px; font-weight: 700; }
+.stat-card p { color: #eee; margin: 0; }
+
+/* Call To Action visual segments */
+.cta-section { background: linear-gradient(135deg,#198754,#146c43); color: #fff; border-radius: 25px; padding: 60px 40px; }
+.cta-section h2 { color: #fff; font-size: 36px; }
+.cta-section p { color: #f5f5f5; }
+
+/* Footer Design Settings */
+footer { background: #111827; color: #fff; padding: 70px 0 20px; }
+footer h3, footer h4 { color: #fff; margin-bottom: 20px; }
+footer p, footer ul li a { color: #cfd4da; }
+footer ul li a:hover { color: var(--secondary); padding-left: 6px; }
+
+/* Dynamic layout elements widgets settings */
+#backToTop {
+    position: fixed; right: 25px; bottom: 25px; width: 50px; height: 50px;
+    border: none; border-radius: 50%; background: var(--primary); color: #fff;
+    cursor: pointer; display: none; z-index: 9999; box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+/* Loader Widget component design setup */
+.loader {
+    position: fixed; inset: 0; background: #fff; display: flex;
+    justify-content: center; align-items: center; z-index: 99999;
+}
+.loader::before {
+    content: ""; width: 50px; height: 50px; border: 5px solid #ddd;
+    border-top: 5px solid var(--primary); border-radius: 50%; animation: spin 1s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Media Adjustments configuration query rules */
+@media(max-width: 991px) {
+    .hero-content h1 { font-size: 38px; }
+    .navbar { background: var(--primary-dark); }
+    section { padding: 60px 0; }
+}
+@media(max-width: 576px) {
+    .hero-content { padding: 30px 20px; }
+    .hero-content h1 { font-size: 28px; }
+    .btn-success, .btn-outline-light { width: 100%; margin-bottom: 10px; }
+}
+/* ==================================================
+    SMALL FIXES FOR STABLE WEBSITE LOADING
+================================================== */
+
+/* Fixes the static banner layout height clash */
+.hero-image {
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Ensures layout elements align nicely under navbar */
+body {
+    padding-top: 0px;
+}
+
+/* Fallback visibility optimization for the navbar image links */
+.navbar-brand img {
+    object-fit: contain;
+}
+
+/* Custom Header Styling to match the brand logo text */
+/* ==================================================
+    LOGO SIZE & NAVBAR INLINE ALIGNMENT FIX
+================================================== */
+
+/* Pure navbar wrapper ko fixed white row mein map karein */
+nav.navbar, .navbar {
+    background: #ffffff !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+    padding: 8px 0 !important;
+    height: auto !important;
+}
+
+/* Image aur layout ko ek hi row mein lane ke liye flex width restrict karein */
+.navbar-brand {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    max-width: 450px !important; /* Limits header expansion space */
+}
+
+/* Isse aapka bada logo simat kar perfect standard size (65px) ka ho jayega */
+.navbar-brand img {
+    height: 65px !important;
+    width: auto !important;
+    max-height: 65px !important;
+    object-fit: contain !important;
+    margin-right: 15px !important;
+}
+
+/* Text block positioning setup */
+.brand-text-container {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    text-align: left !important;
+}
+
+.brand-title {
+    color: #122b60 !important; /* Premium Navy Blue */
+    font-size: 22px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    line-height: 1.1 !important;
+    margin: 0 !important;
+}
+
+.brand-subtitle {
+    color: #cca028 !important; /* Premium Gold */
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    margin-top: 3px !important;
+    line-height: 1 !important;
+}
+
+/* Links positioning fix inside header container */
+.navbar-nav .nav-link {
+    color: #212529 !important;
+    font-weight:600 !important;
+    font-size: 16px !important;
+}
+
+
+
+
+
+
+/* ==================================================
+    LOGO SIZE & NAVBAR INLINE ALIGNMENT FIX
+================================================== */
+
+/* Pure navbar wrapper ko fixed white row mein map karein */
+nav.navbar, .navbar {
+    background: #ffffff !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+    padding: 8px 0 !important;
+    height: auto !important;
+}
+
+/* Image aur layout ko ek hi row mein lane ke liye flex width restrict karein */
+.navbar-brand {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    max-width: 450px !important; /* Limits header expansion space */
+}
+
+/* Isse aapka bada logo simat kar perfect standard size (65px) ka ho jayega */
+.navbar-brand img {
+    height: 65px !important;
+    width: auto !important;
+    max-height: 65px !important;
+    object-fit: contain !important;
+    margin-right: 15px !important;
+}
+
+/* Text block positioning setup */
+.brand-text-container {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    text-align: left !important;
+}
+
+.brand-title {
+    color: #122b60 !important; /* Premium Navy Blue */
+    font-size: 22px !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    line-height: 1.1 !important;
+    margin: 0 !important;
+}
+
+.brand-subtitle {
+    color: #cca028 !important; /* Premium Gold */
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    margin-top: 3px !important;
+    line-height: 1 !important;
+}
+
+/* Links positioning fix inside header container */
+.navbar-nav .nav-link {
+    color: #212529 !important;
+    font-weight: 800 !important;
+    font-size: 16px !important;
+}
+
+/* ==========================================================================
+   SG OVERSEAS CUSTOM CONTACT & NAVIGATION STYLES
+   ========================================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #faf9f2;
+}
+
+/* GALLERY & CONTACT GENERAL TITLE */
+.gallery-title, .page-title-block {
+    text-align: center;
+    padding: 50px 20px;
+    margin-top: 100px; /* FIXED NAVBAR OFFSET */
+}
+
+.gallery-title h1, .page-title-block h1 {
+    font-size: 42px;
+    font-weight: 700;
+    color: #182719;
+    margin-bottom: 10px;
+}
+
+.line, .title-underline {
+    width: 60px;
+    height: 4px;
+    background: #cca028;
+    margin: 20px auto;
+    border-radius: 2px;
+}
+
+.gallery-title p {
+    font-size: 18px;
+    color: #667085;
+}
+
+/* CONTACT SECTION GRID */
+.contact-section {
+    max-width: 1200px;
+    margin: 120px auto 60px auto;
+    padding: 0 20px;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.column-heading {
+    font-size: 22px;
+    font-weight: 700;
+    color: #182719;
+    margin-bottom: 25px;
+}
+
+/* INFO CARD & FORM CARD */
+.info-card, .form-card {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 40px 35px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 22px;
+}
+
+.info-icon {
+    width: 45px;
+    height: 45px;
+    background: #437346;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    margin-right: 18px;
+    flex-shrink: 0;
+}
+
+.info-text {
+    font-size: 15px;
+    color: #333333;
+    line-height: 1.5;
+}
+
+.info-text strong {
+    color: #111111;
+    font-size: 16px;
+}
+
+/* SOCIAL MEDIA LINKS */
+.social-row {
+    display: flex;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.social-btn {
+    width: 40px;
+    height: 40px;
+    background: #437346;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 16px;
+}
+
+.social-btn:hover {
+    background: #122b60;
+    transform: translateY(-3px);
+}
+
+/* FORM ELEMENTS */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 15px 20px;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    font-size: 15px;
+    outline: none;
+    transition: 0.3s;
+    background: #ffffff;
+}
+
+.form-control:focus {
+    border-color: #437346;
+    box-shadow: 0 0 0 3px rgba(67, 115, 70, 0.1);
+}
+
+select.form-control {
+    appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+}
+
+textarea.form-control {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.submit-btn {
+    background: #437346;
+    color: #ffffff;
+    padding: 15px 35px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 100%;
+}
+
+.submit-btn:hover {
+    background: #122b60;
+}
+
+/* FLOATING ACTION BUTTONS */
+.floating-buttons {
+    position: fixed;
+    right: 20px;
+    bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 99999;
+}
+
+.float-btn {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 26px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.float-btn.whatsapp { background: #25d366; }
+.float-btn.phone { background: #52a7e6; }
+.float-btn:hover { transform: scale(1.1); }
+
+/* RESPONSIVE LAYOUT */
+@media (max-width: 992px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+/* Small Hero for Sub-Pages */
+.hero.hero-small {
+    height: 500px !important; /* Shorter height */
+}
