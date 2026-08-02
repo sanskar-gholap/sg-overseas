@@ -54,47 +54,46 @@
 </nav>
 </section>
 
-    <!-- Hero Section -->
-    <!-- ================= HERO BACKGROUND SLIDER ================= -->
-<section class="hero position-relative" style="height: 75vh; min-height: 500px; background-color: #f8f9fa; overflow: hidden;">
+ <!-- ================= HERO BACKGROUND SLIDER ================= -->
+<section class="hero position-relative w-100 p-0" style="height: 100vh; overflow: hidden;">
     
-    <!-- The Slider Wrapper Layer -->
-    <div id="carouselExampleFade" class="carousel slide carousel-fade h-100" data-bs-ride="carousel" data-bs-interval="4000">
-        <div class="carousel-inner h-100">
+    <!-- The Slider Wrapper Layer (w-100 & h-100 added for full width/height) -->
+    <div id="carouselExampleFade" class="carousel slide carousel-fade w-100 h-100" data-bs-ride="carousel" data-bs-interval="4000">
+        <div class="carousel-inner w-100 h-100">
             
             <!-- Slide 1 (Active) -->
-            <div class="carousel-item active h-100">
+            <div class="carousel-item active w-100 h-100">
                 <img src="images/Veg.png" class="d-block w-100 h-100" style="object-fit: cover;" alt="Premium Vegetables">
             </div>
 
             <!-- Slide 2 -->
-            <div class="carousel-item h-100">
+            <div class="carousel-item w-100 h-100">
                 <img src="images/Expo.png" class="d-block w-100 h-100" style="object-fit: cover;" alt="Export Goods">
             </div>
 
             <!-- Slide 3 -->
-            <div class="carousel-item h-100">
+            <div class="carousel-item w-100 h-100">
                 <img src="images/Expo1.png" class="d-block w-100 h-100" style="object-fit: cover;" alt="Global Shipping">
             </div>
 
             <!-- Slide 4 -->
-            <div class="carousel-item h-100">
+            <div class="carousel-item w-100 h-100">
                 <img src="images/Expo2.png" class="d-block w-100 h-100" style="object-fit: cover;" alt="Quality Control">
             </div>
 
         </div>
     </div>
 
-    <!-- Dark Shade Overlay (Ensures your white text remains easily readable) -->
+    <!-- Dark Shade Overlay -->
     <div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0, 0, 0, 0.45); pointer-events: none; z-index: 1;"></div>
 
-    <!-- Foreground Content Layer (Sits centered directly over the photos) -->
+    <!-- Foreground Content Layer -->
     <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center text-center text-white" style="z-index: 2;">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-10">
                     <h1 class="display-4 fw-bold mb-3 text-white" style="text-shadow: 2px 2px 8px rgba(0,0,0,0.6);">
-                        Premium Agricultural Import & Export Company
+                        Premium Agricultural Import &amp; Export Company
                     </h1>
                     <p class="lead mb-4 text-light fw-medium" style="text-shadow: 1px 1px 5px rgba(0,0,0,0.6);">
                         Delivering India's Finest Agricultural Products to Global Markets with Quality, Trust, and Reliability.
@@ -108,6 +107,7 @@
         </div>
     </div>
 
+</section>
 </section>
     <!-- Featured Products -->
     <section class="featured-products py-5 bg-light" id="products">
