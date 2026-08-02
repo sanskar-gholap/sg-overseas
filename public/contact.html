@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- CSS Grid Layout and Premium Design Block -->
     <style>
         * {
             margin: 0;
@@ -20,12 +19,87 @@
 
         body {
             background: #faf9f2;
+            color: #333333;
+        }
+
+        /* HEADER / NAVBAR STYLES */
+        header {
+            background: #ffffff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .brand-logo img {
+            height: 55px;
+            width: auto;
+            margin-right: 15px;
+            object-fit: contain;
+        }
+
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .brand-title {
+            color: #122b60;
+            font-size: 22px;
+            font-weight: 800;
+            text-transform: uppercase;
+            line-height: 1.1;
+            letter-spacing: 0.5px;
+        }
+
+        .brand-subtitle {
+            color: #cca028;
+            font-size: 11px;
+            font-weight: 700;
+            margin-top: 2px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: #212529;
+            font-weight: 700;
+            font-size: 15px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: #198754;
         }
 
         /* CONTACT SECTION CONTAINER */
         .contact-section {
             max-width: 1200px;
-            margin: 120px auto 60px auto; /* Compenses the fixed navbar */
+            margin: 130px auto 80px auto;
             padding: 0 20px;
         }
 
@@ -103,7 +177,6 @@
             font-size: 16px;
         }
 
-        /* SOCIAL MEDIA LINKS */
         .social-row {
             display: flex;
             gap: 12px;
@@ -186,7 +259,7 @@
             background: #122b60;
         }
 
-        /* FLOATING ACTION ICON BUTTONS (WHATSAPP & CALL) */
+        /* FLOATING ACTION BUTTONS */
         .floating-buttons {
             position: fixed;
             right: 20px;
@@ -215,46 +288,128 @@
         .float-btn.phone { background: #52a7e6; }
         .float-btn:hover { transform: scale(1.1); }
 
-        /* RESPONSIVE LAYOUT RESPONSES */
+        /* FOOTER STYLES */
+        footer {
+            background: #122b60;
+            color: #ffffff;
+            padding: 60px 0 20px 0;
+            margin-top: 60px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 40px;
+        }
+
+        .footer-brand h3 {
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            color: #cca028;
+        }
+
+        .footer-brand p {
+            font-size: 14px;
+            color: #d1d5db;
+            line-height: 1.6;
+        }
+
+        .footer-col h4 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #ffffff;
+            position: relative;
+        }
+
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            width: 30px;
+            height: 2px;
+            background: #cca028;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #d1d5db;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #cca028;
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 40px auto 0 auto;
+            padding: 20px 20px 0 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            font-size: 13px;
+            color: #9ca3af;
+        }
+
         @media (max-width: 992px) {
             .contact-grid {
                 grid-template-columns: 1fr;
                 gap: 30px;
+            }
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+            .nav-menu {
+                display: none; /* Can be toggled with a hamburger button */
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- ================= NEW PREMIUM NAVBAR ================= -->
-    <nav class="navbar navbar-expand-lg fixed-top" style="background: #ffffff !important; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important; padding: 10px 0 !important; border-bottom: 1px solid #e9ecef; position: fixed; width: 100%; top: 0; left: 0; z-index: 9999; display: flex !important; align-items: center !important;">
-        <div class="container" style="display: flex !important; align-items: center !important; justify-content: space-between !important; width: 90%; margin: 0 auto;">
-            
-            <!-- Logo Image + Text Container Side by Side -->
-            <a class="navbar-brand" href="index.html" style="display: flex !important; flex-direction: row !important; align-items: center !important; text-decoration: none !important; margin: 0 !important; padding: 0 !important;">
-                <img src="images/logo.png" alt="SG Logo" style="height: 60px !important; width: auto !important; max-height: 60px !important; object-fit: contain !important; margin-right: 15px !important; display: inline-block !important;">
-                
-                <div style="display: flex !important; flex-direction: column !important; justify-content: center !important; text-align: left !important;">
-                    <span style="color: #122b60 !important; font-size: 22px !important; font-weight: 800 !important; text-transform: uppercase !important; line-height: 1.1 !important; font-family: 'Poppins', sans-serif !important; display: block !important; letter-spacing: 0.5px !important;">SG OVERSEAS</span>
-                    <span style="color: #cca028 !important; font-size: 11px !important; font-weight: 700 !important; margin-top: 2px !important; line-height: 1 !important; font-family: 'Poppins', sans-serif !important; display: block !important;">Your Gateway to Global Trade</span>
+    <!-- ================= NAVBAR ================= -->
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="brand-logo">
+                <img src="images/logo.png" alt="SG Logo">
+                <div class="brand-text">
+                    <span class="brand-title">SG OVERSEAS</span>
+                    <span class="brand-subtitle">Your Gateway to Global Trade</span>
                 </div>
             </a>
 
-            <!-- Menu Navigation Links -->
-            <div class="collapse navbar-collapse" id="menu" style="display: flex !important; align-items: center !important;">
-                <ul class="navbar-nav ms-auto" style="display: flex !important; align-items: center !important; list-style: none !important; padding: 0 !important; margin: 0 !important; flex-direction: row !important;">
-                    <li class="nav-item"><a class="nav-link" href="index.html" style="color: #212529 !important; font-weight: 800 !important; font-size: 15px !important; margin-left: 18px !important; text-decoration: none !important;">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html" style="color: #212529 !important; font-weight: 800 !important; font-size: 15px !important; margin-left: 18px !important; text-decoration: none !important;">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="products.html" style="color: #212529 !important; font-weight: 800 !important; font-size: 15px !important; margin-left: 18px !important; text-decoration: none !important;">Products</a></li>
-                    <li class="nav-item"><a class="nav-link" href="gallery.html" style="color: #212529 !important; font-weight: 800 !important; font-size: 15px !important; margin-left: 18px !important; text-decoration: none !important;">Gallery</a></li>
-                    <li class="nav-item"><a class="nav-link" href="certifications.html" style="color: #212529 !important; font-weight: 800 !important; font-size: 15px !important; margin-left: 18px !important; text-decoration: none !important;">Certifications</a></li>
-                    <li class="nav-item"><a class="nav-link" href="faq.html" style="color: #212529 !important; font-weight: 800 !important; font-size: 15px !important; margin-left: 18px !important; text-decoration: none !important;">FAQ</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html" style="color: #198754 !important; font-weight: 800 !important; font-size: 15px !important; margin-left: 18px !important; text-decoration: none !important; border-bottom: 2px solid #198754;">Contact</a></li>
-                </ul>
-            </div>
-
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="products.html" class="nav-link">Products</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="certifications.html" class="nav-link">Certifications</a></li>
+                <li><a href="faq.html" class="nav-link">FAQ</a></li>
+                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+            </ul>
         </div>
-    </nav>
+    </header>
 
     <!-- ================= MAIN CONTACT SECTION ================= -->
     <main class="contact-section">
@@ -301,7 +456,6 @@
                         <div class="info-text">Mon - Sat: 9:00 AM - 7:00 PM (IST)</div>
                     </div>
 
-                    <!-- Social Icons Row -->
                     <div class="social-row">
                         <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
@@ -316,36 +470,40 @@
             <div>
                 <h2 class="column-heading">Send Inquiry</h2>
                 <div class="form-card">
-                    <form action="#" method="POST">
+                    <form action="/enquiry" method="POST">
                         
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Full Name" required>
+                            <input type="text" name="name" class="form-control" placeholder="Full Name" required>
                         </div>
 
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Company Name">
+                            <input type="text" name="company" class="form-control" placeholder="Company Name">
                         </div>
 
                         <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Email Address" required>
+                            <input type="email" name="email" class="form-control" placeholder="Email Address" required>
                         </div>
 
                         <div class="form-group">
-                            <input type="tel" class="form-control" placeholder="Phone Number" required>
+                            <input type="tel" name="phone" class="form-control" placeholder="Phone Number" required>
                         </div>
 
                         <div class="form-group">
-                            <select class="form-control" required>
+                            <input type="text" name="country" class="form-control" placeholder="Country" required>
+                        </div>
+
+                        <div class="form-group">
+                            <select name="product" class="form-control" required>
                                 <option value="" disabled selected>Select Product Interest</option>
-                                <option value="onions">Fresh Onions</option>
-                                <option value="pulses">Pulses & Grains</option>
-                                <option value="spices">Spices Powder</option>
-                                <option value="other">Other Agro Products</option>
+                                <option value="Fresh Onions">Fresh Onions</option>
+                                <option value="Pulses & Grains">Pulses & Grains</option>
+                                <option value="Spices Powder">Spices Powder</option>
+                                <option value="Other Agro Products">Other Agro Products</option>
                             </select>
                         </div>
 
                         <div class="form-group">
-                            <textarea class="form-control" placeholder="Message / Quantity Required / Sample Request" required></textarea>
+                            <textarea name="message" class="form-control" placeholder="Message / Quantity Required / Sample Request" required></textarea>
                         </div>
 
                         <button type="submit" class="submit-btn">Send Message</button>
@@ -359,13 +517,55 @@
 
     <!-- ================= FLOATING ACTION SIDEBAR BUTTONS ================= -->
     <div class="floating-buttons">
-        <a href="https//wa.me/919370xxxxxx" target="_blank" class="float-btn whatsapp">
+        <a href="https://wa.me/919370xxxxxx" target="_blank" class="float-btn whatsapp">
             <i class="fab fa-whatsapp"></i>
         </a>
         <a href="tel:+919370xxxxxx" class="float-btn phone">
             <i class="fas fa-phone-alt"></i>
         </a>
     </div>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3>SG OVERSEAS</h3>
+                <p>Leading exporter of premium agro products, delivering quality Indian produce globally with commitment and excellence.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul class="footer-links">
+                    <li><a href="certifications.html">Certifications</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contact Info</h4>
+                <p style="font-size: 14px; color: #d1d5db; line-height: 1.8;">
+                    Nashik, Maharashtra, India<br>
+                    <strong>Email:</strong> info@sgoverseas.com<br>
+                    <strong>Phone:</strong> +91 9370xxxxxx
+                </p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 SG OVERSEAS. All Rights Reserved.</p>
+        </div>
+    </footer>
 
 </body>
 </html>
