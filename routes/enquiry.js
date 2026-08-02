@@ -5,22 +5,21 @@ const nodemailer = require('nodemailer');
 router.post('/', async (req, res) => {
     const { name, company, email, phone, country, product, message } = req.body;
 
-    // Create Nodemailer Transporter
+    // Explicit SMTP configuration for Gmail
     const transporter = nodemailer.createTransport({
-        service: 'gmail',
+        host: 'smtp.gmail.com',
+        port: 465,
+        secure: true, // Use SSL
         auth: {
-            user: process.env.EMAIL_USER, // Your Gmail address
-            pass: process.env.EMAIL_PASS  // Your Gmail App Password (16 characters)
-        },
-        connectionTimeout: 10000, // 10 seconds timeout
-        greetingTimeout: 5000,
-        socketTimeout: 10000
+            user: process.env.EMAIL_USER,
+            pass: process.env.EMAIL_PASS
+        }
     });
 
     const mailOptions = {
         from: `"${name}" <${process.env.EMAIL_USER}>`,
         replyTo: email,
-        to: process.env.EMAIL_USER, // Receives the inquiry
+        to: process.env.EMAIL_USER,
         subject: `New Inquiry from ${name} (${product})`,
         html: `
             <h3>New Contact Form Submission</h3>
@@ -37,7 +36,6 @@ router.post('/', async (req, res) => {
 
     try {
         await transporter.sendMail(mailOptions);
-        // Send alert and redirect back to contact page
         res.send(`
             <script>
                 alert('Thank you! Your inquiry has been sent successfully.');
@@ -45,7 +43,7 @@ router.post('/', async (req, res) => {
             </script>
         `);
     } catch (error) {
-        console.error('Nodemailer Error:', error);
+        console.error('Nodemailer Error Details:', error);
         res.status(500).send(`
             <script>
                 alert('Failed to send inquiry. Please try again or email us directly.');
