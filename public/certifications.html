@@ -57,24 +57,19 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
 </nav>
 
 <!-- Hero -->
-<section class="hero" style="height: 160px !important; min-height: 160px !important;">
+<!-- ================= HERO ================= -->
+<section class="hero position-relative d-flex align-items-center justify-content-center text-center text-white" 
+         style="margin-top: 80px; min-height: 200px; background: #0b150c; overflow: hidden;">
+    
+    <!-- Dark overlay for clean contrast -->
+    <div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0, 0, 0, 0.6); z-index: 1;"></div>
 
-<img src="images/certificate-banner.jpg" class="hero-image w-100">
-
-<div class="overlay"></div>
-
-<div class="container">
-
-<div class="hero-content text-center">
-
-<h1>Our Certifications</h1>
-
-<p>Quality • Trust • International Standards</p>
-
-</div>
-
-</div>
-
+    <div class="container position-relative" style="z-index: 2;">
+        <h1 class="display-5 fw-bold text-white mb-2">Our Certifications</h1>
+        <p class="lead text-warning fw-medium m-0" style="color: #c5a85c !important;">
+            Quality • Trust • International Standards
+        </p>
+    </div>
 </section>
 
 <!-- Certificates -->
